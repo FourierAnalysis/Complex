@@ -5,10 +5,10 @@ AP2.t1      = 0;
 AP2.t2      = 0;
 AP2.xGraph = 1.5*AP2.size;
 
-AP2.range  = SD.rangeMaker  ({xMin: -AP2.size, xMax: 4*AP2.size, yMin: -AP2.size, yMax: AP2.size});
+AP2.range  = SD.rangeMaker  ({xMin: -1.2*AP2.size, xMax: 4*AP2.size, yMin: -AP2.size, yMax: AP2.size});
 AP2.scene  = SD.sceneMaker  ({div: AP2.div, range: AP2.range});
-AP2.yAxis  = SD.lineMaker   ({x1:0, x2:0, y1:AP2.range.yMin, y2:AP2.range.yMax, style:'->', arrowSize: AP2.size/10});
-AP2.xAxis  = SD.lineMaker   ({y1:0, y2:0, x1:AP2.range.xMin, x2:AP2.range.xMax, style:'->', arrowSize: AP2.size/10});
+AP2.yAxis  = SD.lineMaker   ({x1:0, x2:0, y1:AP2.range.yMin, y2:AP2.range.yMax, style:'--', width:"1px"});
+AP2.xAxis  = SD.lineMaker   ({y1:0, y2:0, x1:AP2.range.xMin, x2:AP2.range.xMax, style:'--', width:"1px"});
 
 AP2.circle1 = SD.circleMaker ({ x:0,  y:0, r:3});
 AP2.circle1.svgAttributes["fill"] = "none";
@@ -16,7 +16,7 @@ AP2.circle1.svgAttributes["stroke"] = "DarkViolet";
 AP2.circle1.svgAttributes["vector-effect"] = "non-scaling-stroke";
 AP2.circle1.svgAttributes["stroke-width"] = "2px";
 
-AP2.vector1 = SD.lineMaker   ({x1:0, y1:0, style: '--', color:'red'});
+AP2.vector1 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP2.point1  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP2.circle2 = SD.circleMaker ({r:AP2.circle1.r/3});
@@ -25,7 +25,7 @@ AP2.circle2.svgAttributes["stroke"] = "MediumSpringGreen";
 AP2.circle2.svgAttributes["vector-effect"] = "non-scaling-stroke";
 AP2.circle2.svgAttributes["stroke-width"] = "2px";
 
-AP2.vector2 = SD.lineMaker   ({x1:0, y1:0, style: '--', color:'red'});
+AP2.vector2 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP2.point2  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP2.arrow  = SD.lineMaker   ({x2:AP2.xGraph, style:'->', arrowSize: AP2.size/10, width:'1px', color:'SpringGreen'});

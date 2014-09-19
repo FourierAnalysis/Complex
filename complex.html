@@ -74,11 +74,9 @@
 		sobre la circunferencia unidad, lo que deja patente la
 		relación entre exponenciales complejas y armónicos.
 	      </p>
-	      <form>
-		Con esta barra puedes mover el punto a lo largo de la circunferencia.
-		<input type="range" min="-10", max="10", step="0.016" name="bar"
-		       onmousemove="UC.t = this.form.bar.value; UC.plot();" value="0.52" >
-	      </form>
+	      <p>
+		Con la barra inferior puedes mover el punto a lo largo de la circunferencia.
+	      </p>
 	    </div>
 	  </div>
 	</div>
@@ -91,6 +89,16 @@
 		  <div id="divUnitCircle" class="plot"></div>
 		</div>
 	      </div>
+	      
+	      <div class="row">
+		<div class="col-sm-10 col-sm-offset-1">
+		  <form>
+		    <input type="range" min="-10", max="10", step="0.016" name="bar"
+			   onmousemove="UC.t = this.form.bar.value; UC.plot();" value="0.52" >
+		  </form>
+		</div>
+	      </div>
+
 	    </div>
 	  </div>
 	</div>
@@ -129,6 +137,7 @@
 	<div class="col-sm-12 col-md-6">
 	  <div class="panel panel-default descriptionSpace">
 	    <div class="panel-body"> 
+
 	      <p>
 		Poco a poco estamos ganando complejidad (chistaco de
 		números complejos). Para seguir con la analogía con las
@@ -151,12 +160,6 @@
 		controlar la posición de los puntos.
 	      </p>
 
-	      <form>
-		<input type="range" min="-10", max="10", step="0.016" name="bar1" 
-		       onmousemove="TC.t1 = this.form.bar1.value; TC.plot();" value = "1" >
-		<input type="range" min="-10", max="10", step="0.016" name="bar2"
-		       onmousemove="TC.t2 = this.form.bar2.value; TC.plot();" value = "2.5">
-	      </form>
 	    </div>
 	  </div>
 	</div>
@@ -169,10 +172,31 @@
 		  <div id="divTwoCircles" class="plot"></div>
 		</div>
 	      </div>
+
+	      <div class="row">
+		<div class="col-sm-10 col-sm-offset-1">
+		  <div class="row">
+		    <form>
+		      <div class="col-sm-6">
+			<input type="range" min="-10", max="10", step="0.016" name="bar1" 
+			       onmousemove="TC.t1 = this.form.bar1.value; TC.plot();" value = "1" >
+		      </div>
+		      <div class="col-sm-6">
+			<input type="range" min="-10", max="10", step="0.016" name="bar2"
+			       onmousemove="TC.t2 = this.form.bar2.value; TC.plot();" value = "2.5">
+		      </div>
+		    </form>
+		  </div>
+		</div>
+	      </div>
+
 	    </div>
 	  </div>
 	</div>
       </div>
+
+
+	      
 
 
 
