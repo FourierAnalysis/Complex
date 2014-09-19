@@ -6,6 +6,7 @@ AP4.t2      = 0;
 AP4.t3      = 0;
 AP4.t4      = 0;
 AP4.xGraph = 1.5*AP4.size;
+AP4.animated = false;
 
 AP4.range  = SD.rangeMaker  ({xMin: -1.2*AP4.size, xMax: 4*AP4.size, yMin: -AP4.size, yMax: AP4.size});
 AP4.scene  = SD.sceneMaker  ({div: AP4.div, range: AP4.range});
@@ -161,6 +162,8 @@ AP4.plot = function () {
 
 
 AP4.animate = function (speed) {
+  if (!this.animated) {
+    this.animated = true;
   var v = speed;
   if(!v) v=1;
   var obj = this;
@@ -172,4 +175,5 @@ AP4.animate = function (speed) {
     obj.plot();
   };
   setInterval(move, 40);
+  }
 };

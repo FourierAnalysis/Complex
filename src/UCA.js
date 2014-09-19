@@ -3,14 +3,15 @@ UCA.div    = document.getElementById('divUnitCircleAnimated');
 UCA.size   = 1.5;
 UCA.t      = 0;
 UCA.xGraph = 1.5*UCA.size;
+UCA.animated = false;
 
 UCA.range  = SD.rangeMaker  ({xMin: -UCA.size, xMax: 4*UCA.size, yMin: -UCA.size, yMax: UCA.size});
 UCA.scene  = SD.sceneMaker  ({div: UCA.div, range: UCA.range});
 UCA.yAxis  = SD.lineMaker   ({x1:0, x2:0, y1:UCA.range.yMin, y2:UCA.range.yMax, style:'--', width:"1px"});
 UCA.xAxis  = SD.lineMaker   ({y1:0, y2:0, x1:UCA.range.xMin, x2:UCA.range.xMax, style:'--', width:"1px"});
 UCA.circle = SD.circleMaker ({ x:0,  y:0, r:1});
-UCA.circle.svgAttributes["fill"] = "none";
-UCA.circle.svgAttributes["stroke"] = "DarkViolet";
+UCA.circle.svgAttributes["fill"]         = "none";
+UCA.circle.svgAttributes["stroke"]       = "DarkViolet";
 UCA.circle.svgAttributes["stroke-width"] = "0.05px";
 
 UCA.point  = SD.circleMaker ({ x:Math.cos(UCA.t),  y:Math.sin(UCA.t), r:0.05, svgAttributes: {fill: '#111111'}});
@@ -78,10 +79,15 @@ UCA.plot = function () {
 
 
 UCA.animate = function (speed) {
-  var obj = this;
-  var move = function() {
-    obj.t += 0.04*speed;
-    obj.plot();
-  };
-  setInterval(move, 40);
+  if(!this.animated) {
+    this.animated = true;
+    var obj = this;
+    var v=speed;
+    if (!v) v=1;
+    var move = function() {
+      obj.t += 0.04*v;
+      obj.plot();
+    };
+    setInterval(move, 40);
+  }
 };

@@ -20,10 +20,11 @@ CP.im     = SD.lineMaker   ({x1:-CP.space, y1:0, x2:-CP.space, y2:CP.point.y, st
 CP.add = function () {
   this.scene.add(this.xAxis);
   this.scene.add(this.yAxis);
-  this.scene.add(this.vector);
-  this.scene.add(this.point);
+
   this.scene.add(this.xProj);
   this.scene.add(this.yProj);
+  this.scene.add(this.vector);
+  this.scene.add(this.point);  
   this.scene.add(this.re);
   this.scene.add(this.im);
 };

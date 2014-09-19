@@ -9,16 +9,20 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+.contentSpace {
+    color: #111111;
+}
+
 .descriptionSpace {
     background-color: #f1f1f1;
-    color: #111111;
     font-family: "Times New Roman", Times, serif;
     font-size: 1.1em;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .graphSpace {
     background-color: #f1f1f1;
-    color: #111111;
     font-family: "Times New Roman", Times, serif;
     font-size: 1.1em;
 }

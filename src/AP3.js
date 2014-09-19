@@ -5,6 +5,7 @@ AP3.t1      = 0;
 AP3.t2      = 0;
 AP3.t3      = 0;
 AP3.xGraph = 1.5*AP3.size;
+AP3.animated = false;
 
 AP3.range  = SD.rangeMaker  ({xMin: -1.2*AP3.size, xMax: 4*AP3.size, yMin: -AP3.size, yMax: AP3.size});
 AP3.scene  = SD.sceneMaker  ({div: AP3.div, range: AP3.range});
@@ -131,14 +132,17 @@ AP3.plot = function () {
 
 
 AP3.animate = function (speed) {
-  var v = speed;
-  if(!v) v=1;
-  var obj = this;
-  var move = function() {
-    obj.t1 += 0.04*v;
-    obj.t2 = 3*obj.t1;
-    obj.t3 = 5*obj.t1;
-    obj.plot();
-  };
-  setInterval(move, 40);
+  if (!this.animated) {
+    this.animated = true;
+    var v = speed;
+    if(!v) v=1;
+    var obj = this;
+    var move = function() {
+      obj.t1 += 0.04*v;
+      obj.t2 = 3*obj.t1;
+      obj.t3 = 5*obj.t1;
+      obj.plot();
+    };
+    setInterval(move, 40);
+  }
 };

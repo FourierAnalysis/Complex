@@ -4,6 +4,7 @@ AP2.size    = 4.5;
 AP2.t1      = 0;
 AP2.t2      = 0;
 AP2.xGraph = 1.5*AP2.size;
+AP2.animated = false;
 
 AP2.range  = SD.rangeMaker  ({xMin: -1.2*AP2.size, xMax: 4*AP2.size, yMin: -AP2.size, yMax: AP2.size});
 AP2.scene  = SD.sceneMaker  ({div: AP2.div, range: AP2.range});
@@ -95,13 +96,16 @@ AP2.plot = function () {
 
 
 AP2.animate = function (speed) {
-  var v = speed;
-  if(!v) v=1;
-  var obj = this;
-  var move = function() {
-    obj.t1 += 0.04*v;
-    obj.t2 = 3*obj.t1;
-    obj.plot();
-  };
-  setInterval(move, 40);
+  if(!this.animated) {
+    this.animated = true;
+    var v = speed;
+    if(!v) v=1;
+    var obj = this;
+    var move = function() {
+      obj.t1 += 0.04*v;
+      obj.t2 = 3*obj.t1;
+      obj.plot();
+    };
+    setInterval(move, 40);
+  }
 };

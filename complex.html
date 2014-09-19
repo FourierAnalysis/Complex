@@ -34,14 +34,15 @@
 	<div class="col-sm-12 col-md-6">
 	  <div class="panel panel-default descriptionSpace">
 	    <div class="panel-body"> 
+
 	      <p>
-		Recordemos que un número complejo se puede expresar de la
-		forma $z=a+ib$, lo que permite identificar un número
-		complejo con un un punto en el plano de coordenadas
-		$(a,b)$.
+		Como hemos visto en los artículos, las series de Fourier son más fáciles de utilizar si trabajamos con números complejos. Por esta razón, vamos a dar un pequeño repaso al enfoque complejo que hicimos del análisis de Fourier, centrándonos especialmente en la representación gráfica.
+	      <p>
+		Comencemos por considerar un número complejo $z\in\mathbb{C}$. Sabemos que este número se puede expresar de la
+		forma $z=a+ib$, siendo $a$ y $b$ las partes real e imaginaria respectivamente.
 	      </p>
 	      <p>
-		Bla bla bla Blo blo blo bling bling bling
+		Esta idea de expresar un número complejo con dos números reales nos sugiere hacer la identificación $z\equiv (a,b)$ y ahora centrarnos en la representación de $(a,b)$ como un <strong>punto del plano</strong> $\mathbb{R}^2$.
 	      </p>
 	    </div>
 	  </div>
@@ -66,17 +67,28 @@
 	<div class="col-sm-12 col-md-6">
 	  <div class="panel panel-default descriptionSpace">
 	    <div class="panel-body"> 
+
 	      <p>
-		Vamos ahora con la exponencial compleja. Como vimos en el
-		artículo $e^{it} = \cos t + i\sin t$, lo que nos permite
-		representar el número complejo $e^{it}$ como un punto con
-		coordenadas $(\cos t, \sin t)$ Este punto estará siempre
-		sobre la circunferencia unidad, lo que deja patente la
-		relación entre exponenciales complejas y armónicos.
+		En la figura anterior se muestra un número $z$
+		cualquiera, por lo que gráficamente se identifica como
+		un punto cualquiera del plano.
+	      <p>
+		Ahora nos vamos a interesar en un tipo particular de
+		números, aquellos que son de la forma $z=e^{it}$ para
+		algún número real $t$. Según lo visto en el artículo,
+		tendremos $e^{it} = \cos t + i\sin t$, lo que nos
+		permite identificar el número complejo con el punto
+		del plano con coordenadas $(\cos t, \sin t)$.
 	      </p>
 	      <p>
-		Con la barra inferior puedes mover el punto a lo largo de la circunferencia.
+		Es inmediato comprobar que punto está siempre sobre la
+		circunferencia unidad. Además, como su parte real e
+		imaginaria son cosenos y senos, tenemos ya la relación
+		entre exponenciales complejas y armónicos. Moviendo la
+		barra bajo la gráfica podemos ver cómo cambian $\cos
+		t$ y $\sin t$ según vamos moviendo $t$.
 	      </p>
+
 	    </div>
 	  </div>
 	</div>
@@ -111,12 +123,13 @@
 	<div class="col-sm-12 col-md-6">
 	  <div class="panel panel-default descriptionSpace">
 	    <div class="panel-body"> 
+
 	      <p>
-		Para hacer más clara la relación, vamos a dejar que $t$
-		represente el tiempo, de modo que el punto gire
-		automáticamente, y a la vez vamos a ir dibujando la parte
-		imaginaria en una gráfica. Si todo va bien, deberíamos
-		obtener un seno.
+		Estamos repitiendo que las partes reales e imaginarias son cosenos y senos, pero tiene que haber una forma más clara de verlo. Pensemos en lo siguiente, podemos ir variando el ángulo $t$, y según lo hagamos podemos registrar el valor de la parte imaginaria. Si lo que decimos es correcto, para cada valor de $t$, la parte imaginaria mide $\sin t$.
+	      </p>
+
+	      <p>
+		Para creernos esto, vamos a dibujar una gráfica que nos dé el valor de la parte imaginaria para cada $t$. Esta construcción interactiva la puedes observar pulsando el botón.
 	      </p>
 	    </div>
 	  </div>
@@ -126,6 +139,13 @@
 	  <div class="panel panel-default graphSpace">
 	    <div class="panel-body"> 
 	      <div id="divUnitCircleAnimated" class="plot"></div>
+	      <div class="row">
+		<div class="col-sm-12">
+		  <form>
+		    <input type="button" value="Animar" onclick="UCA.animate();">
+		  </form>
+		</div>
+	      </div>
 	    </div>
 	  </div>
 	</div>
@@ -155,9 +175,7 @@
 	      </p>
 
 	      <p>
-		Las flechas exteriores representan la suma de las partes
-		real e imaginaria (en blanco). Con las dos barras se puede
-		controlar la posición de los puntos.
+		Con las dos barras se puede controlar la posición de los puntos.
 	      </p>
 
 	    </div>
@@ -230,6 +248,13 @@
 	  <div class="panel panel-default graphSpace">
 	    <div class="panel-body"> 
 	      <div id="divApproximation2" class="plot"></div>
+	      <div class="row">
+		<div class="col-sm-12">
+		  <form>
+		    <input type="button" value="Animar" onclick="AP2.animate();">
+		  </form>
+		</div>
+	      </div>
 	    </div>
 	  </div>
 	</div>
@@ -253,6 +278,13 @@
 	  <div class="panel panel-default graphSpace">
 	    <div class="panel-body"> 
 	      <div id="divApproximation3" class="plot"></div>
+	      <div class="row">
+		<div class="col-sm-12">
+		  <form>
+		    <input type="button" value="Animar" onclick="AP3.animate();">
+		  </form>
+		</div>
+	      </div>
 	    </div>
 	  </div>
 	</div>
@@ -275,6 +307,13 @@
 	  <div class="panel panel-default graphSpace">
 	    <div class="panel-body"> 
 	      <div id="divApproximation4" class="plot"></div>
+	      <div class="row">
+		<div class="col-sm-12">
+		  <form>
+		    <input type="button" value="Animar" onclick="AP4.animate();">
+		  </form>
+		</div>
+	      </div>
 	    </div>
 	  </div>
 	</div>
