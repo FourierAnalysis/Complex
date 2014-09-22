@@ -12,7 +12,9 @@ UCA.xAxis  = SD.lineMaker   ({y1:0, y2:0, x1:UCA.range.xMin, x2:UCA.range.xMax, 
 UCA.circle = SD.circleMaker ({ x:0,  y:0, r:1});
 UCA.circle.svgAttributes["fill"]         = "none";
 UCA.circle.svgAttributes["stroke"]       = "DarkViolet";
-UCA.circle.svgAttributes["stroke-width"] = "0.05px";
+UCA.circle.svgAttributes["vector-effect"]= "non-scaling-stroke";
+UCA.circle.svgAttributes["stroke-width"] = "3px";
+UCA.circle.htmlClasses.push("firstCircle");
 
 UCA.point  = SD.circleMaker ({ x:Math.cos(UCA.t),  y:Math.sin(UCA.t), r:0.05, svgAttributes: {fill: '#111111'}});
 UCA.vector = SD.lineMaker   ({x1:0, y1:0, x2:UCA.point.x, y2:UCA.point.y, style: '->', arrowSize: UCA.size/10, color:'red'});
@@ -23,7 +25,7 @@ UCA.im     = SD.lineMaker   ({x1:0, y1:0, x2:0, y2:UCA.point.y, width:'2px', col
 UCA.arrow  = SD.lineMaker   ({x1:UCA.point.x, y1:UCA.point.y, x2:UCA.xGraph, y2:UCA.point.y, style:'->', arrowSize: UCA.size/10,
 			      width:'1px', color:'SpringGreen'});
 UCA.fRange = SD.rangeMaker  ({xMin: UCA.xGraph, yMin: -1.1, yMax: 1.1});
-UCA.graph  = SD.functionGraphMaker({range: UCA.fRange, numberOfSegments: 60, style:"-p", color:'#111111'});
+UCA.graph  = SD.functionGraphMaker({range: UCA.fRange, numberOfSegments: 60, color:'#111111'});
 
 
 UCA.add = function () {

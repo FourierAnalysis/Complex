@@ -16,6 +16,7 @@ AP2.circle1.svgAttributes["fill"] = "none";
 AP2.circle1.svgAttributes["stroke"] = "DarkViolet";
 AP2.circle1.svgAttributes["vector-effect"] = "non-scaling-stroke";
 AP2.circle1.svgAttributes["stroke-width"] = "2px";
+AP2.circle1.htmlClasses.push("firstCircle");
 
 AP2.vector1 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP2.point1  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
@@ -25,13 +26,15 @@ AP2.circle2.svgAttributes["fill"] = "none";
 AP2.circle2.svgAttributes["stroke"] = "MediumSpringGreen";
 AP2.circle2.svgAttributes["vector-effect"] = "non-scaling-stroke";
 AP2.circle2.svgAttributes["stroke-width"] = "2px";
+AP2.circle2.htmlClasses.push("secondCircle");
 
 AP2.vector2 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP2.point2  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP2.arrow  = SD.lineMaker   ({x2:AP2.xGraph, style:'->', arrowSize: AP2.size/10, width:'1px', color:'SpringGreen'});
 AP2.fRange = SD.rangeMaker  ({xMin: AP2.xGraph, yMin: -4, yMax: 4});
-AP2.graph  = SD.functionGraphMaker({range: AP2.fRange, numberOfSegments: 100, style:"-p", color:'#111111'});
+AP2.graph  = SD.functionGraphMaker({range: AP2.fRange, numberOfSegments: 100});
+AP2.graph.htmlClasses.push('AproximationGraph');
 
 
 AP2.add = function () {
@@ -41,14 +44,15 @@ AP2.add = function () {
 
   this.scene.add(this.circle1);
   this.scene.add(this.vector1);
-  this.scene.add(this.point1);
 
   this.scene.add(this.circle2);
   this.scene.add(this.vector2);
-  this.scene.add(this.point2);
 
   this.scene.add(this.arrow);
   this.scene.add(this.graph);
+
+  this.scene.add(this.point1);
+  this.scene.add(this.point2);
 
 };
 

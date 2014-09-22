@@ -14,6 +14,7 @@ TC.circle1.svgAttributes["fill"] = "none";
 TC.circle1.svgAttributes["stroke"] = "DarkViolet";
 TC.circle1.svgAttributes["vector-effect"] = "non-scaling-stroke";
 TC.circle1.svgAttributes["stroke-width"] = "2px";
+TC.circle1.htmlClasses.push("firstCircle");
 
 TC.point1  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#253439'}});
 TC.vector1 = SD.lineMaker   ({x1:0, y1:0, style: '-', arrowSize: TC.size/15, color:'red'});
@@ -25,6 +26,7 @@ TC.circle2.svgAttributes["fill"] = "none";
 TC.circle2.svgAttributes["stroke"] = "MediumSpringGreen";
 TC.circle2.svgAttributes["vector-effect"] = "non-scaling-stroke";
 TC.circle2.svgAttributes["stroke-width"] = "3px";
+TC.circle2.htmlClasses.push("secondCircle");
 
 TC.xAxis2  = SD.lineMaker   ({style:'--', width:'1px'});
 TC.yAxis2  = SD.lineMaker   ({style:'--', width:'1px'});

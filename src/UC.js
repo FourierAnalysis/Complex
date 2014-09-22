@@ -8,10 +8,7 @@ UC.scene  = SD.sceneMaker  ({div: UC.div, range: UC.range});
 UC.yAxis  = SD.lineMaker   ({x1:0, x2:0, y1:-UC.size, y2:UC.size, style:'--', width:'1px'});
 UC.xAxis  = SD.lineMaker   ({y1:0, y2:0, x1:-UC.size, x2:UC.size, style:'--', width:'1px'});
 UC.circle = SD.circleMaker ({ x:0,  y:0, r:1});
-UC.circle.svgAttributes["fill"] = "none";
-UC.circle.svgAttributes["stroke"] = "DarkViolet";
-UC.circle.svgAttributes["vector-effect"] = "non-scaling-stroke";
-UC.circle.svgAttributes["stroke-width"] = "3px";
+UC.circle.htmlClasses.push("firstCircle");
 
 UC.point  = SD.circleMaker ({ x:Math.cos(UC.t),  y:Math.sin(UC.t), r:0.05, svgAttributes: {fill: '#111111'}});
 UC.vector = SD.lineMaker   ({x1:0, y1:0, x2:UC.point.x, y2:UC.point.y, style: '->', arrowSize: UC.size/7, color:'red'});

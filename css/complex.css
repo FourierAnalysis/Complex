@@ -26,3 +26,35 @@ body {
     font-family: "Times New Roman", Times, serif;
     font-size: 1.1em;
 }
+
+.firstCircle {
+    fill: none;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 2px;
+    stroke: DarkViolet;
+}
+
+.secondCircle {
+    fill: none;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 2px;
+    stroke: #1e88ab;
+}
+
+.thirdCircle {
+    fill: none;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 2px;
+    stroke: chocolate;
+}
+
+.fourthCircle {
+    fill: none;
+    vector-effect: non-scaling-stroke;
+    stroke-width: 2px;
+    stroke: DarkGray;
+}
+
+.functionGraph {
+    stroke: #111111;
+}

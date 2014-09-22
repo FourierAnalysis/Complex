@@ -15,45 +15,33 @@ AP4.yAxis  = SD.lineMaker   ({x1:0, x2:0, y1:AP4.range.yMin, y2:AP4.range.yMax, 
 
 
 AP4.circle1 = SD.circleMaker ({ x:0,  y:0, r:3});
-AP4.circle1.svgAttributes["fill"] = "none";
-AP4.circle1.svgAttributes["stroke"] = "DarkViolet";
-AP4.circle1.svgAttributes["vector-effect"] = "non-scaling-stroke";
-AP4.circle1.svgAttributes["stroke-width"] = "2px";
+AP4.circle1.htmlClasses.push("firstCircle");
 
 AP4.vector1 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP4.point1  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP4.circle2 = SD.circleMaker ({r:AP4.circle1.r/3});
-AP4.circle2.svgAttributes["fill"] = "none";
-AP4.circle2.svgAttributes["stroke"] = "MediumSpringGreen";
-AP4.circle2.svgAttributes["vector-effect"] = "non-scaling-stroke";
-AP4.circle2.svgAttributes["stroke-width"] = "2px";
+AP4.circle2.htmlClasses.push("secondCircle");
 
 AP4.vector2 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP4.point2  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP4.circle3 = SD.circleMaker ({r:AP4.circle1.r/5});
-AP4.circle3.svgAttributes["fill"] = "none";
-AP4.circle3.svgAttributes["stroke"] = "Chocolate";
-AP4.circle3.svgAttributes["vector-effect"] = "non-scaling-stroke";
-AP4.circle3.svgAttributes["stroke-width"] = "2px";
+AP4.circle3.htmlClasses.push("thirdCircle");
 
 AP4.vector3 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP4.point3  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP4.circle4 = SD.circleMaker ({r:AP4.circle1.r/7});
-AP4.circle4.svgAttributes["fill"] = "none";
-AP4.circle4.svgAttributes["stroke"] = "DarkGray";
-AP4.circle4.svgAttributes["vector-effect"] = "non-scaling-stroke";
-AP4.circle4.svgAttributes["stroke-width"] = "2px";
+AP4.circle4.htmlClasses.push("fourthCircle");
 
 AP4.vector4 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP4.point4  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP4.arrow  = SD.lineMaker   ({x2:AP4.xGraph, style:'->', arrowSize: AP4.size/10, width:'1px', color:'SpringGreen'});
 AP4.fRange = SD.rangeMaker  ({xMin: AP4.xGraph, yMin: -4, yMax: 4});
-AP4.graph  = SD.functionGraphMaker({range: AP4.fRange, numberOfSegments: 150, style:"-p", color:'#111111'});
-
+AP4.graph  = SD.functionGraphMaker({range: AP4.fRange, numberOfSegments: 150, color:'#111111'});
+AP4.graph.htmlClasses.push('AproximationGraph');
 
 
 
@@ -64,22 +52,23 @@ AP4.add = function () {
 
   this.scene.add(this.circle1);
   this.scene.add(this.vector1);
-  this.scene.add(this.point1);
 
   this.scene.add(this.circle2);
   this.scene.add(this.vector2);
-  this.scene.add(this.point2);
 
   this.scene.add(this.circle3);
   this.scene.add(this.vector3);
-  this.scene.add(this.point3);
 
   this.scene.add(this.circle4);
   this.scene.add(this.vector4);
-  this.scene.add(this.point4);
 
   this.scene.add(this.arrow);
   this.scene.add(this.graph);
+
+  this.scene.add(this.point1);
+  this.scene.add(this.point2);
+  this.scene.add(this.point3);
+  this.scene.add(this.point4);
 
 };
 

@@ -14,35 +14,27 @@ AP3.yAxis  = SD.lineMaker   ({x1:0, x2:0, y1:AP3.range.yMin, y2:AP3.range.yMax, 
 
 
 AP3.circle1 = SD.circleMaker ({ x:0,  y:0, r:3});
-AP3.circle1.svgAttributes["fill"] = "none";
-AP3.circle1.svgAttributes["stroke"] = "DarkViolet";
-AP3.circle1.svgAttributes["vector-effect"] = "non-scaling-stroke";
-AP3.circle1.svgAttributes["stroke-width"] = "2px";
+AP3.circle1.htmlClasses.push("firstCircle");
 
 AP3.vector1 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP3.point1  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP3.circle2 = SD.circleMaker ({r:AP3.circle1.r/3});
-AP3.circle2.svgAttributes["fill"] = "none";
-AP3.circle2.svgAttributes["stroke"] = "MediumSpringGreen";
-AP3.circle2.svgAttributes["vector-effect"] = "non-scaling-stroke";
-AP3.circle2.svgAttributes["stroke-width"] = "2px";
+AP3.circle2.htmlClasses.push("secondCircle");
 
 AP3.vector2 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP3.point2  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP3.circle3 = SD.circleMaker ({r:AP3.circle1.r/5});
-AP3.circle3.svgAttributes["fill"] = "none";
-AP3.circle3.svgAttributes["stroke"] = "Chocolate";
-AP3.circle3.svgAttributes["vector-effect"] = "non-scaling-stroke";
-AP3.circle3.svgAttributes["stroke-width"] = "2px";
+AP3.circle3.htmlClasses.push("thirdCircle");
 
 AP3.vector3 = SD.lineMaker   ({x1:0, y1:0, color:'red'});
 AP3.point3  = SD.circleMaker ({r:0.1, svgAttributes: {fill: '#111111'}});
 
 AP3.arrow  = SD.lineMaker   ({x2:AP3.xGraph, style:'->', arrowSize: AP3.size/10, width:'1px', color:'SpringGreen'});
 AP3.fRange = SD.rangeMaker  ({xMin: AP3.xGraph, yMin: -4, yMax: 4});
-AP3.graph  = SD.functionGraphMaker({range: AP3.fRange, numberOfSegments: 150, style:"-p", color:'#111111'});
+AP3.graph  = SD.functionGraphMaker({range: AP3.fRange, numberOfSegments: 150, color:'#111111'});
+AP3.graph.htmlClasses.push('AproximationGraph');
 
 
 
@@ -54,18 +46,19 @@ AP3.add = function () {
 
   this.scene.add(this.circle1);
   this.scene.add(this.vector1);
-  this.scene.add(this.point1);
 
   this.scene.add(this.circle2);
   this.scene.add(this.vector2);
-  this.scene.add(this.point2);
 
   this.scene.add(this.circle3);
   this.scene.add(this.vector3);
-  this.scene.add(this.point3);
 
   this.scene.add(this.arrow);
   this.scene.add(this.graph);
+
+  this.scene.add(this.point1);
+  this.scene.add(this.point2);
+  this.scene.add(this.point3);
 
 };
 
