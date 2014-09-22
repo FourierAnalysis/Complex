@@ -97,7 +97,6 @@ AP2.plot = function () {
 
 AP2.animate = function (speed) {
   if(!this.animated) {
-    this.animated = true;
     var v = speed;
     if(!v) v=1;
     var obj = this;
@@ -106,6 +105,17 @@ AP2.animate = function (speed) {
       obj.t2 = 3*obj.t1;
       obj.plot();
     };
-    setInterval(move, 40);
+    this.animated = setInterval(move, 40);
   }
+  else {
+    clearInterval(this.animated);
+    this.animated=false;
+  }
+};
+
+
+
+AP2.changeButtonName = function (form) {
+  if (this.animated) form.control.value = "Parar";
+  else               form.control.value = "Animar";
 };

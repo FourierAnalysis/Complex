@@ -1,4 +1,4 @@
-var UCA={}; // UCA stands for UnitCircle
+var UCA={}; // UCA stands for UnitCircleAnimated
 UCA.div    = document.getElementById('divUnitCircleAnimated');
 UCA.size   = 1.5;
 UCA.t      = 0;
@@ -80,7 +80,6 @@ UCA.plot = function () {
 
 UCA.animate = function (speed) {
   if(!this.animated) {
-    this.animated = true;
     var obj = this;
     var v=speed;
     if (!v) v=1;
@@ -88,6 +87,18 @@ UCA.animate = function (speed) {
       obj.t += 0.04*v;
       obj.plot();
     };
-    setInterval(move, 40);
+    this.animated = setInterval(move, 40);
+  }
+  else {
+    clearInterval(this.animated);
+    this.animated=false;
   }
 };
+
+
+
+UCA.changeButtonName = function (form) {
+  if (this.animated) form.control.value = "Parar";
+  else               form.control.value = "Animar";
+};
+

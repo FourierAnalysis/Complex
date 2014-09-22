@@ -133,7 +133,6 @@ AP3.plot = function () {
 
 AP3.animate = function (speed) {
   if (!this.animated) {
-    this.animated = true;
     var v = speed;
     if(!v) v=1;
     var obj = this;
@@ -143,6 +142,16 @@ AP3.animate = function (speed) {
       obj.t3 = 5*obj.t1;
       obj.plot();
     };
-    setInterval(move, 40);
+    this.animated = setInterval(move, 40);
   }
+  else {
+    clearInterval(this.animated);
+    this.animated=false;
+  }
+};
+
+
+AP3.changeButtonName = function (form) {
+  if (this.animated) form.control.value = "Parar";
+  else               form.control.value = "Animar";
 };

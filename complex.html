@@ -36,14 +36,26 @@
 	    <div class="panel-body"> 
 
 	      <p>
-		Como hemos visto en los artículos, las series de Fourier son más fáciles de utilizar si trabajamos con números complejos. Por esta razón, vamos a dar un pequeño repaso al enfoque complejo que hicimos del análisis de Fourier, centrándonos especialmente en la representación gráfica.
+		Como hemos visto en los artículos, las series de
+		Fourier son más fáciles de utilizar si trabajamos con
+		números complejos. Por esta razón, vamos a dar un
+		pequeño repaso al enfoque complejo que hicimos del
+		análisis de Fourier, centrándonos especialmente en la
+		representación gráfica.
 	      <p>
-		Comencemos por considerar un número complejo $z\in\mathbb{C}$. Sabemos que este número se puede expresar de la
-		forma $z=a+ib$, siendo $a$ y $b$ las partes real e imaginaria respectivamente.
+		Comencemos por considerar un número complejo
+		$z\in\mathbb{C}$. Sabemos que este número se puede
+		expresar de la forma $z=a+ib$, siendo $a$ y $b$ las
+		partes real e imaginaria respectivamente.
 	      </p>
 	      <p>
-		Esta idea de expresar un número complejo con dos números reales nos sugiere hacer la identificación $z\equiv (a,b)$ y ahora centrarnos en la representación de $(a,b)$ como un <strong>punto del plano</strong> $\mathbb{R}^2$.
+		Esta idea de expresar un número complejo con dos
+		números reales nos sugiere hacer la identificación
+		$z\equiv (a,b)$ y ahora centrarnos en la
+		representación de $(a,b)$ como un <strong>punto del
+		plano</strong> $\mathbb{R}^2$.
 	      </p>
+
 	    </div>
 	  </div>
 	</div>
@@ -69,24 +81,22 @@
 	    <div class="panel-body"> 
 
 	      <p>
-		En la figura anterior se muestra un número $z$
-		cualquiera, por lo que gráficamente se identifica como
-		un punto cualquiera del plano.
-	      <p>
-		Ahora nos vamos a interesar en un tipo particular de
-		números, aquellos que son de la forma $z=e^{it}$ para
-		algún número real $t$. Según lo visto en el artículo,
-		tendremos $e^{it} = \cos t + i\sin t$, lo que nos
-		permite identificar el número complejo con el punto
-		del plano con coordenadas $(\cos t, \sin t)$.
+		En la figura anterior hemos dibujado un número $z$
+		cualquiera. Ahora nos vamos a interesar en un tipo
+		particular de números, aquellos que son de la forma
+		$z=e^{it}$ para algún número real $t$. Según lo visto
+		en el artículo, tendremos $e^{it} = \cos t + i\sin t$,
+		lo que nos permite identificar el número complejo con
+		el punto del plano de coordenadas $(\cos t, \sin t)$.
 	      </p>
 	      <p>
-		Es inmediato comprobar que punto está siempre sobre la
-		circunferencia unidad. Además, como su parte real e
-		imaginaria son cosenos y senos, tenemos ya la relación
-		entre exponenciales complejas y armónicos. Moviendo la
-		barra bajo la gráfica podemos ver cómo cambian $\cos
-		t$ y $\sin t$ según vamos moviendo $t$.
+		Estos puntos están siempre sobre la circunferencia
+		unidad. Además, como su parte real e imaginaria son
+		cosenos y senos, tenemos ya la relación entre
+		exponenciales complejas y armónicos. Moviendo la barra
+		bajo la gráfica podemos cambiar el valor de $t$, lo
+		que hará que cambien respecitvamente $\cos t$ y $\sin
+		t$.
 	      </p>
 
 	    </div>
@@ -125,12 +135,23 @@
 	    <div class="panel-body"> 
 
 	      <p>
-		Estamos repitiendo que las partes reales e imaginarias son cosenos y senos, pero tiene que haber una forma más clara de verlo. Pensemos en lo siguiente, podemos ir variando el ángulo $t$, y según lo hagamos podemos registrar el valor de la parte imaginaria. Si lo que decimos es correcto, para cada valor de $t$, la parte imaginaria mide $\sin t$.
+		Vale, las partes real e imaginaria de un número
+		complejo de la forma $e^{it}$ son armónicos. ¿Hay
+		alguna manera visual de ver esto?
 	      </p>
 
 	      <p>
-		Para creernos esto, vamos a dibujar una gráfica que nos dé el valor de la parte imaginaria para cada $t$. Esta construcción interactiva la puedes observar pulsando el botón.
+		En efecto, vamos a dejar que $t$ varíe automáticamente
+		mientras vamos dibujando a la vez la parte
+		imaginaria. Si todo va bien, debería aparecer poco a
+		poco la gráfica de la función.
 	      </p>
+
+	      <p>
+		Para ver esto, sólo tienes que pulsar <i>Animar</i>
+		bajo la gráfica.
+	      </p>
+
 	    </div>
 	  </div>
 	</div>
@@ -142,7 +163,8 @@
 	      <div class="row">
 		<div class="col-sm-12">
 		  <form>
-		    <input type="button" value="Animar" onclick="UCA.animate();">
+		    <input type="button" value="Animar" class="btn btn-primary btn-block"
+			   name="control" onclick="UCA.animate(); UCA.changeButtonName(this.form);">
 		  </form>
 		</div>
 	      </div>
@@ -160,22 +182,31 @@
 
 	      <p>
 		Poco a poco estamos ganando complejidad (chistaco de
-		números complejos). Para seguir con la analogía con las
-		series de Fourier complejas vamos a mirar ahora cómo
-		podemos representar sumas de senos. De la figura anterior
-		queda claro que el seno es la parte imaginaria de un punto
-		que se desplaza por un círculo.</p>
+		números complejos). Para seguir con la analogía con
+		las series de Fourier complejas vamos a mirar ahora
+		cómo podemos representar sumas de senos. De la figura
+		anterior queda claro que el seno es la parte
+		imaginaria de un punto que se desplaza por un
+		círculo.</p>
 
 	      <p>
 		Si queremos representar dos senos, vamos a coger dos
-		puntos. El primero de ellos se moverá sobre un círculo,
-		como hasta ahora. La novedad será un segundo círculo con
-		centro en el primer punto, y un segundo punto girando
-		sobre el segundo círculo.
+		puntos y dos círculos. De esta manera, bastará con
+		sumar las partes imaginarias.
 	      </p>
 
 	      <p>
-		Con las dos barras se puede controlar la posición de los puntos.
+		Para hacer la suma más fácil gráficamente, vamos a
+		montar el segundo círculo sobre el primer punto. De
+		esta manera, la altura del punto final es la suma de
+		senos buscada. Notemos que el tamaño de los radios es
+		importante, pues en realidad la suma que estamos
+		haciendo es \[ r_1 \sin(t_1) + r_2\sin(t_2) \]
+	      </p>
+
+	      <p>
+		Con las dos barras se puede controlar los valores de
+		$t_1$ y $t_2$, y así las posiciones de los puntos.
 	      </p>
 
 	    </div>
@@ -227,18 +258,22 @@
 	      <p>
 		Juntando todo lo anterior estamos en condiciones de
 		representar una animación de una suma de senos que
-		represente a una función. Por comoidad, vamos a tomar un
-		tren de pulsos rectangulares, ya que se escribe como \[
-		f(t) \approx \sin(t) + \frac{1}{3}\sin(3t) +
-		\frac{1}{5}\sin(5t) + ...  \] La amplitud de cada armónico
-		la controlaremos cambiando el radio del círculo, y luego
-		tendremos que ajustar los ángulos.
+		represente a una función. Por comodidad, vamos a tomar un
+		tren de pulsos rectangulares, ya que se escribe como 
+		\[
+		  f(t) \approx \sin(t) + \frac{1}{3}\sin(3t) +
+		               \frac{1}{5}\sin(5t) + ...  
+		\]
+		La amplitud de cada armónico la controlaremos
+		cambiando el radio del círculo, y luego tendremos que
+		ajustar los ángulos.
 	      </p>
 
 	      <p>
-		Notar que tendríamos problemas si la serie de Fourier
-		tiene senos y cosenos, porque la analogía gráfica no sería
-		tan inmediata
+		En la figura puedes ver la primera aproximación, ya
+		que dibujamos $\sin(t) + \frac{1}{3}\sin(3t)$. En
+		efecto, es importante ver cómo el ángulo del segundo
+		círculo gira tres veces más rápido que el primero.
 	      </p>
 	    </div>
 	  </div>
@@ -251,7 +286,8 @@
 	      <div class="row">
 		<div class="col-sm-12">
 		  <form>
-		    <input type="button" value="Animar" onclick="AP2.animate();">
+		    <input type="button" value="Animar" class="btn btn-primary btn-block"
+			   name="control" onclick="AP2.animate(); AP2.changeButtonName(this.form);">
 		  </form>
 		</div>
 	      </div>
@@ -266,10 +302,26 @@
 	<div class="col-sm-12 col-md-6">
 	  <div class="panel panel-default descriptionSpace">
 	    <div class="panel-body"> 
+
 	      <p>
-		Nada nos impide añadir más círculos para tener una
-		aproximacion mejor
+		Por supuesto, nada nos impide añadir términos a
+		nuestra aproximación para acercarnos más al tren de
+		pulsos rectangulares.
 	      </p>
+
+	      <p>
+		Si utilizamos 3 armónicos, tendríamos que dibujar \[
+		\sin(t) + \frac{1}{3}\sin(3t) + \frac{1}{5}\sin(5t) \]
+		Esto lo vamos a conseguir añadiendo un tercer círculo.
+	      </p>
+	      
+	      <p>
+		Así, bastará ajustar el tamaño de los radios
+		adecuadamente, y hacer que el ángulo gire 5 veces más
+		rápido. El resultado lo puedes comprobar de nuevo en
+		la gráfica de la figura pulsando <i>Animar</i>.
+	      </p>
+
 	    </div>
 	  </div>
 	</div>
@@ -281,7 +333,8 @@
 	      <div class="row">
 		<div class="col-sm-12">
 		  <form>
-		    <input type="button" value="Animar" onclick="AP3.animate();">
+		    <input type="button" class="btn btn-primary btn-block" value="Animar"
+			   name="control" onclick="AP3.animate(); AP3.changeButtonName(this.form);">
 		  </form>
 		</div>
 	      </div>
@@ -296,9 +349,22 @@
 	<div class="col-sm-12 col-md-6">
 	  <div class="panel panel-default descriptionSpace">
 	    <div class="panel-body"> 
+
 	      <p>
-		O bien....
+		Ya sólo por diversión, vamos a dibujar una
+		aproximación más: 
+		\[
+		  \sin(t) + \frac{1}{3}\sin(3t) +
+		  \frac{1}{5}\sin(5t) + \frac{1}{7}\sin(7t)
+		\] De nuevo, esto vuelve a pasar por añadir otro
+		círculo que sume otro seno.
 	      </p>
+
+	      <p>
+		Como siempre, puedes verlo pulsando <i>Animar</i> bajo
+		la figura.
+	      </p>
+
 	    </div>
 	  </div>
 	</div>
@@ -310,7 +376,8 @@
 	      <div class="row">
 		<div class="col-sm-12">
 		  <form>
-		    <input type="button" value="Animar" onclick="AP4.animate();">
+		    <input type="button" class="btn btn-primary btn-block" value="Animar"
+			   name="control" onclick="AP4.animate(); AP4.changeButtonName(this.form);">
 		  </form>
 		</div>
 	      </div>

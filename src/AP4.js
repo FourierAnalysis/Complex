@@ -163,7 +163,6 @@ AP4.plot = function () {
 
 AP4.animate = function (speed) {
   if (!this.animated) {
-    this.animated = true;
   var v = speed;
   if(!v) v=1;
   var obj = this;
@@ -174,6 +173,16 @@ AP4.animate = function (speed) {
     obj.t4 = 7*obj.t1;
     obj.plot();
   };
-  setInterval(move, 40);
+  this.animated = setInterval(move, 40);
   }
+  else {
+    clearInterval(this.animated);
+    this.animated=false;
+  }
+};
+
+
+AP4.changeButtonName = function (form) {
+  if (this.animated) form.control.value = "Parar";
+  else               form.control.value = "Animar";
 };
